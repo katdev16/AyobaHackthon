@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Phone Dialer</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<body>
+    <div class="dialer-container">
+        <div class="display">
+            
+           
+            <input type="text" id="phoneNumber" readonly placeholder="">
+
+        </div>
+        <div class="buttons">
+            <button class="btn" onclick="appendNumber('1')">1</button>
+            <button class="btn" onclick="appendNumber('2')">2</button>
+            <button class="btn" onclick="appendNumber('3')">3</button>
+            <button class="btn" onclick="appendNumber('4')">4</button>
+            <button class="btn" onclick="appendNumber('5')">5</button>
+            <button class="btn" onclick="appendNumber('6')">6</button>
+            <button class="btn" onclick="appendNumber('7')">7</button>
+            <button class="btn" onclick="appendNumber('8')">8</button>
+            <button class="btn" onclick="appendNumber('9')">9</button>
+            <button class="btn" onclick="appendNumber('*')">*</button>
+            <button class="btn" onclick="appendNumber('0')">0</button>
+            <button class="btn" onclick="appendNumber('#')">#</button>
+            <button class="btn btn-clear" onclick="clearNumber()"><i class="fa-solid fa-delete-left"></i></button>
+            <button class="btn btn-dial" onclick="submitUSSD()"><i class="fa-solid fa-phone"></i></button>
+        </div>
+    </div>
+
+    <div id="ussdResponse" class="ussd-response"></div>
+
+
+    <!-- Hidden message input area -->
+    <textarea id="messageInput" style="display: none;" placeholder="Enter your message..."></textarea>
+    <button id="sendMessageBtn" style="display: none;" onclick="sendMessage()">Send Message</button>
+
+    <script src="../javascript/index.js"></script>
+</body>
+</html>
