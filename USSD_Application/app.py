@@ -20,7 +20,7 @@ CORS(app)
 
 def send_message_to_ayoba(phone_number, message):
     headers = {
-        'Authorization': f'Bearer {"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ijk5MjlhODViMWI1ZWMxYWIwMDQ2M2Y1OGJjM2I4MmE0NWNlODUyZTQiLCJqaWQiOiI5OTI5YTg1YjFiNWVjMWFiMDA0NjNmNThiYzNiODJhNDVjZTg1MmU0QGF5b2JhLm1lIiwiZ3JvdXAiOiJidXNpbmVzcyIsIm1zaXNkbiI6bnVsbCwiaWF0IjoxNzIyMTIwNTE4LCJleHAiOjE3MjIxMjIzMTh9.SnC3SKeLf99BDbVzs0TjTjK5el40HgxSldfIKndtm1Q"}',
+        'Authorization': f'Bearer {"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ijk5MjlhODViMWI1ZWMxYWIwMDQ2M2Y1OGJjM2I4MmE0NWNlODUyZTQiLCJqaWQiOiI5OTI5YTg1YjFiNWVjMWFiMDA0NjNmNThiYzNiODJhNDVjZTg1MmU0QGF5b2JhLm1lIiwiZ3JvdXAiOiJidXNpbmVzcyIsIm1zaXNkbiI6bnVsbCwiaWF0IjoxNzIyMTI3OTk4LCJleHAiOjE3MjIxMjk3OTh9.RPraoQaaxQJzyVz9RhTQpOB6Zw5qoXdWgoahqcIxipg"}',
         'Content-Type': 'application/json'
     }
     payload = {
@@ -41,16 +41,16 @@ def ussd():
     if ussd_string == '*123#':
         response_message = 'Welcome to CodeInc. Reply with 0 for Business list.'
     elif ussd_string == '0':
-        response_message = '1. Business A\n2. Business B\n3. Business C'
+        response_message = '1. Mcdonald A\n2. Pep\n3. Police'
         ussd_string = request.form.get('ussd_string', '')
      
     elif ussd_string == '1':
-        response_message = 'You selected Business A. Reply with 9 to send Emergency message.'
+        response_message = 'You selected Mcdonald. Reply with 9 to send Emergency message.'
 
     elif ussd_string == '2':
-        response_message = 'You selected Business B. Reply with 9 to send Emergency message.'
+        response_message = 'You selected Pep. Reply with 9 to send Emergency message.'
     elif ussd_string == '3':
-        response_message = 'You selected Business C. Reply with 9 to send Emergency message.'
+        response_message = 'You selected Police. Reply with 9 to send Emergency message.'
  
     elif ussd_string == '9':
         
