@@ -10,13 +10,7 @@ load_dotenv()
 app = Flask(__name__)
 CORS(app)
 
-
-
-
-
 # AYOBA_API_URL= "https://api.ayoba.me/v1/business/message"
-
-#AYOBA_API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ijk5MjlhODViMWI1ZWMxYWIwMDQ2M2Y1OGJjM2I4MmE0NWNlODUyZTQiLCJqaWQiOiI5OTI5YTg1YjFiNWVjMWFiMDA0NjNmNThiYzNiODJhNDVjZTg1MmU0QGF5b2JhLm1lIiwiZ3JvdXAiOiJidXNpbmVzcyIsIm1zaXNkbiI6bnVsbCwiaWF0IjoxNzIyMTE4MzUxLCJleHAiOjE3MjIxMjAxNTF9.3Hm2aOQCYrZdR_Y7pLqnriQu6PA5rn6ovC0o6kbklj8"
 
 token = input("Acess token : ")
 Phone_Number = input("Phone number : ")
