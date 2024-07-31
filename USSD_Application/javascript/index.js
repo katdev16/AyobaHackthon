@@ -1,21 +1,5 @@
 let ussdState = ''; // Keeps track of the USSD state
 
-// Simulates the USSD response based on input
-function getUSSDResponse(ussdString) {
-    // Define possible USSD responses
-    const ussdResponses = {
-        '123': 'Balance: $10',
-        '456': 'Data: 2GB remaining',
-        '789': 'Call Time: 30 minutes remaining',
-        '*100#': 'Welcome to the service menu',
-        '*101#': 'Account balance: $50',
-        'default': 'Invalid USSD code'
-    };
-
-    // Return the response based on the input USSD string
-    return ussdResponses[ussdString] || ussdResponses['default'];
-}
-
 function appendNumber(number) {
     const phoneNumberInput = document.getElementById('phoneNumber');
     phoneNumberInput.value += number;
@@ -27,42 +11,6 @@ function clearNumber() {
     document.getElementById('ussdResponse').textContent = '';
     ussdState = ''; // Reset USSD state
 }
-
-// function submitUSSD() {
-//     const phoneNumberInput = document.getElementById('phoneNumber');
-//     const ussdString = phoneNumberInput.value.trim(); // Trim whitespace
-
-//     // Check if the input is not empty
-//     // if (!ussdString) {
-//     //     document.getElementById('ussdResponse').textContent = 'Please enter a USSD code.';
-//     //     return;
-//     // }
-//     if(ussdString=="*888#"){
-//         document.getElementById('ussdResponse').textContent = 'Welcome to CodeInc. Reply with 1 for Businesses list.';
-//         phoneNumberInput = document.getElementById('phoneNumber').value="";
-//         ussdString=="";
-//         if(ussdString=="1"){
-//             document.getElementById('ussdResponse').textContent = '1.MTN\n 2.CellC\n 3.Vodacom';
-//             phoneNumberInput = document.getElementById('phoneNumber').value="";
-//         return;
-//         }
-//     }
-//     if (ussdString === "1") {
-//         document.getElementById('ussdResponse').textContent = '1. MTN\n2. CellC\n3. Vodacom';
-//         phoneNumberInput.value = ''; // Clear the input field
-//         return;
-//     }
-
-//     // Get the USSD response
-//     const responseMessage = getUSSDResponse(ussdString);
-
-//     // Display the response message
-//     document.getElementById('ussdResponse').textContent = responseMessage;
-
-//     // Clear input for new requests after initial submission
-//     phoneNumberInput.value = '';
-//     ussdState = ''; // Reset state for new interactions
-// }
 
 
 async function submitUSSD() {

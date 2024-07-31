@@ -18,13 +18,15 @@ CORS(app)
 
 #AYOBA_API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ijk5MjlhODViMWI1ZWMxYWIwMDQ2M2Y1OGJjM2I4MmE0NWNlODUyZTQiLCJqaWQiOiI5OTI5YTg1YjFiNWVjMWFiMDA0NjNmNThiYzNiODJhNDVjZTg1MmU0QGF5b2JhLm1lIiwiZ3JvdXAiOiJidXNpbmVzcyIsIm1zaXNkbiI6bnVsbCwiaWF0IjoxNzIyMTE4MzUxLCJleHAiOjE3MjIxMjAxNTF9.3Hm2aOQCYrZdR_Y7pLqnriQu6PA5rn6ovC0o6kbklj8"
 
+token = input("Acess token : ")
+Phone_Number = input("Phone number : ")
 def send_message_to_ayoba(phone_number, message):
     headers = {
         'Authorization': f'Bearer {"eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VybmFtZSI6Ijk5MjlhODViMWI1ZWMxYWIwMDQ2M2Y1OGJjM2I4MmE0NWNlODUyZTQiLCJqaWQiOiI5OTI5YTg1YjFiNWVjMWFiMDA0NjNmNThiYzNiODJhNDVjZTg1MmU0QGF5b2JhLm1lIiwiZ3JvdXAiOiJidXNpbmVzcyIsIm1zaXNkbiI6bnVsbCwiaWF0IjoxNzIyMTI3OTk4LCJleHAiOjE3MjIxMjk3OTh9.RPraoQaaxQJzyVz9RhTQpOB6Zw5qoXdWgoahqcIxipg"}',
         'Content-Type': 'application/json'
     }
     payload = {
-        'msisdns': [phone_number],
+        'msisdns': [Phone_Number],
         'message': {
             'type': 'text',
             'text':  message
@@ -61,7 +63,7 @@ def ussd():
         message = ussd_string[len('msg:'):]
         # print(message)
         # Send the message using the Ayoba API
-        result = send_message_to_ayoba("+27684085164", message)
+        result = send_message_to_ayoba(Phone_Number, message)
         response_message = f'Message sent'
     else:
         response_message = 'Invalid option. Try again.'
